@@ -29,46 +29,50 @@ while True:
         print("goodbye")
         break
 
-    if len(problem) < 2:
+    elif len(problem) < 2:
         print("Not enough inputs")
         continue
 
-
-
-    num1 = problem[1]
-    if not num1.isdigit(): 
+    elif len(problem) == 2:
+        op = problem[0]
+        num1 = problem[1]
+        if not num1.isdigit(): 
             print("use all digits")
             continue
-    num1 = int(num1)
-    
+        num1 = int(num1)
+
+        if op == "square":
+            print(float(square(num1)))
+
+        elif op == "cube": 
+            print(float(cube(num1)))
+        
     if len(problem) > 2:
+        op = problem[0]
+        num1 = problem[1]
         num2 = problem[2]
-        if not num2.isdigit():
+        if not num2.isdigit() or not num1.isdigit():
             print("use all digits")
             continue
+        num1 = int(num1)
         num2= int(num2)
-       
+    
+        if op == "+": 
+            print(float(add(num1, num2)))
 
-    if op == "+": 
-       print(float(add(num1, num2)))
+        elif op == "-": 
+            print(float(subtract(num1, num2)))
+        
+        elif op == "*": 
+            print(float(multiply(num1, num2)))
+        
+        elif op == "/": 
+            print(float(divide(num1, num2)))
+        
+        elif op == "mod": 
+            print(float(mod(num1, num2)))
 
-    elif op == "-": 
-       print(float(subtract(num1, num2)))
-    
-    elif op == "*": 
-       print(float(multiply(num1, num2)))
-    
-    elif op == "/": 
-       print(float(divide(num1, num2)))
-    
-    elif op == "mod": 
-       print(float(mod(num1, num2)))
 
-    elif op == "square": 
-       print(float(square(num1)))
-    
-    elif op == "cube": 
-       print(float(cube(num1)))
     
 
      
